@@ -1,8 +1,15 @@
-<div class="alert alert-success" role="alert">
+<div class="alert alert-info" role="alert">
   <h3><%= @restaurant.name %> </h3>
   <p>Address: <%= @restaurant.address %> </p>
   <p>Phone: <%= @restaurant.phone_number %> </p>
   <p>Category: <%= @restaurant.category %></p>
+</div>
+<div class="alert alert-success" role="alert">
+  <h4>Reviews:</h4> <% @restaurant.reviews.each do |review| %></p>
+  <p><ol><li><%= review.content %></li>
+    <p><li>Rating: <%= review.rating %></li></p></ol>
+    <% end %>
+  <%= link_to 'Add review', new_restaurant_review_path(@restaurant) %>
 </div>
 
 <%= link_to 'Back', restaurants_path %>
