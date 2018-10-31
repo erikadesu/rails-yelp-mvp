@@ -5,7 +5,7 @@
         <%= f.input :name, placeholder: "Please insert the name of the restaurant" %>
         <%= f.input :address, placeholder: "Please insert the address of the restaurant" %>
         <%= f.input :phone_number, placeholder: "Please insert phone number of the restaurant" %>
-        <%= f.input :category, placeholder: "Please type category" %>
+        <%= f.select :category, %w(chinese italian french belgian japanese), :prompt => 'Select One' %>
         <%= f.submit 'Submit', class: 'btn btn-primary btn-lg btn-block' %>
         <% end %>
       </div>
